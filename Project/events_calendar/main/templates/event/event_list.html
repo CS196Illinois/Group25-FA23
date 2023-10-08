@@ -1,0 +1,34 @@
+<!-- main/templates/main/event_list.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Add your CSS and title here -->
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li>
+          <a href="#">Event</a>
+          <ul>
+            <li><a href="/event/form/">Create Event</a></li>
+            <li><a href="/event/list/">Event List</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <h1>Event List</h1>
+    <ul>
+      {% for event in events %}
+      <li>
+        {{ event.event_name }}<br />
+        Time: {{ event.date }}<br />
+        Location: {{ event.description }}<br />
+      </li>
+      {% empty %}
+      <li>No events found.</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
