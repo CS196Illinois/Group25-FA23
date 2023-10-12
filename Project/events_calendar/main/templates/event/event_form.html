@@ -1,0 +1,27 @@
+<!-- main/templates/main/event_form.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Add your CSS and title here -->
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li>
+          <a href="#">Event</a>
+          <ul>
+            <li><a href="/event/form/">Create Event</a></li>
+            <li><a href="/event/list/">Event List</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <h1>Create Event</h1>
+    <form method="POST">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Create Event</button>
+    </form>
+  </body>
+</html>
