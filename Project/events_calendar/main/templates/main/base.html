@@ -11,16 +11,17 @@
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
+    {% load static%}
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" /> 
+    <link rel="stylesheet" href="{% static "css/navbar.css" %}" />
   </head>
   <body>
     <!-- This is the base html page, so it would just include like a navbar and/or footer 
         basically anything that needs to be on EVERY SINGLE PAGE - or almost every page
         Every other html page uses this page (using extends) -->
-    <div class="container" >
-      <ul class="nav bg-secondary">
+    <div class="container">
+      <ul class="nav">
         <li class="nav-item">
           <a class="nav-link link-light text-dark" href="/">Home</a>
         </li>
@@ -29,12 +30,12 @@
         </li>
         <li class="nav-item">
           <div class="dropdown">
-            <button type="button" class="btn btn-secondary text-dark dropdown-toggle" data-bs-toggle="dropdown">
+            <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
               Event
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item bg-secondary text-dark" href="/event/form/">Create Event</a></li>
-              <li><a class="dropdown-item bg-secondary text-dark" href="/event/list/">Event List</a></li>
+              <li><a class="dropdown-item" href="/event/form/">Create Event</a></li>
+              <li><a class="dropdown-item" href="/event/list/">Event List</a></li>
             </ul>
           </div>
         </li>
