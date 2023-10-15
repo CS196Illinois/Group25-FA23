@@ -2,26 +2,44 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Add your CSS and title here -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>event_form</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static%}
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static "css/navbar.css" %}" />
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">About</a></li>
-        <li>
-          <a href="#">Event</a>
-          <ul>
-            <li><a href="/event/form/">Create Event</a></li>
-            <li><a href="/event/list/">Event List</a></li>
-          </ul>
+    <div class="container">
+      <ul class="nav bg">
+        <li class="nav-item">
+          <a class="nav-link link-light text-dark" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-light text-dark" href="/">About</a>
+        </li>
+        <li class="nav-item">
+          <div class="dropdown">
+            <button type="button" class="btn text-dark dropdown-toggle" data-bs-toggle="dropdown">
+              Event
+            </button>
+            <ul class="dropdown-menu bg">
+              <li><a class="dropdown-item text-dark" href="/event/form/">Create Event</a></li>
+              <li><a class="dropdown-item text-dark" href="/event/list/">Event List</a></li>
+            </ul>
+          </div>
         </li>
       </ul>
-    </nav>
-    <h1>Create Event</h1>
+    </div>
+
+    <h1 class="text-dark">Create Event</h1>
     <form method="POST">
       {% csrf_token %} {{ form.as_p }}
-      <button type="submit">Create Event</button>
+      <button type="button" class="btn text-dark bg-light">Create Event</button>
     </form>
   </body>
 </html>
