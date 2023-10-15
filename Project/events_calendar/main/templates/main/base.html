@@ -8,28 +8,39 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>IlliniEvents</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="" /> 
   </head>
   <body>
     <!-- This is the base html page, so it would just include like a navbar and/or footer 
         basically anything that needs to be on EVERY SINGLE PAGE - or almost every page
         Every other html page uses this page (using extends) -->
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">About</a></li>
-        <li>
-          <a href="#">Event</a>
-          <ul>
-            <li><a href="/event/form/">Create Event</a></li>
-            <li><a href="/event/list/">Event List</a></li>
-          </ul>
+    <div class="container" >
+      <ul class="nav bg-secondary">
+        <li class="nav-item">
+          <a class="nav-link link-light text-dark" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-light text-dark" href="/">About</a>
+        </li>
+        <li class="nav-item">
+          <div class="dropdown">
+            <button type="button" class="btn btn-secondary text-dark dropdown-toggle" data-bs-toggle="dropdown">
+              Event
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item bg-secondary text-dark" href="/event/form/">Create Event</a></li>
+              <li><a class="dropdown-item bg-secondary text-dark" href="/event/list/">Event List</a></li>
+            </ul>
+          </div>
         </li>
       </ul>
-    </nav>
+    </div>
+
     <h1>Welcome to IlliniEvents!</h1>
-    <script src="" async defer></script>
   </body>
 </html>
