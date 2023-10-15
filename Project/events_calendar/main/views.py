@@ -1,12 +1,16 @@
 from django.shortcuts import render
-from event.models import Event
+from rest_framework import generics, status
+from .serializers import EventSerializer
+from event.models import Events
 
 # Create your views here.
+class EventListView(generics.ListAPIView):
+    model = Events
+    serializer_class = EventSerializer
 
+# def index(request):
 
-def index(request):
+#     context = {
 
-    context = {
-
-    }
-    return render(request, "main/base.html", context)
+#     }
+#     return render(request, "main/base.html", context)

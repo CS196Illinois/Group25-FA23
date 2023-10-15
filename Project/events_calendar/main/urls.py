@@ -1,8 +1,9 @@
-from django.urls import path
-from . import views
+from django.urls import path, include
+from .views import EventListView
 
 app_name = 'main'
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('event', EventListView.as_View()),
+    path('', include('frontend.urls'))
 ]
