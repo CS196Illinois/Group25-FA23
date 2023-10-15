@@ -2,12 +2,14 @@ h1 {
     color: white;
     text-align: center;
 }
-ul {
-    background-color: aquamarine;
+ul.bg {
+    background-color: lightblue;
+    color: white;
 }
 a {
-    background-color: aquamarine;
+    background-color: lightblue;
+    color: white;
 }
 body {
-    background-color: aquamarine;
+    background-color: lightblue;
 }
