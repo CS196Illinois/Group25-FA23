@@ -9,6 +9,7 @@ const CreateEvent = () => {
   const [time, setTime] = useState("");
   const [location, setLocation] = useState("");
   const [organizer, setOrganizer] = useState("");
+  const [category, setCategory] = useState("");
 
   //   axios
   //   .post("https://example.con/login", { email, password })
@@ -27,6 +28,7 @@ const CreateEvent = () => {
         time,
         location,
         organizer,
+        category,
       })
       .then((response) => {
         console.log(response);
@@ -39,6 +41,7 @@ const CreateEvent = () => {
       date,
       time,
       location,
+      category,
     });
     // Reset form fields after submission
     setEventName("");
@@ -46,6 +49,8 @@ const CreateEvent = () => {
     setDate("");
     setTime("");
     setLocation("");
+    setOrganizer("");
+    setCategory("");
   };
 
   return (
@@ -103,6 +108,24 @@ const CreateEvent = () => {
             value={organizer}
             onChange={(e) => setOrganizer(e.target.value)}
           />
+        </label>
+        <br />
+        <label>
+          Category:
+          <select 
+            name="category" 
+            id="category" 
+            value={category} 
+            onChange={e => setCategory(e.target.value)}
+          >
+            <option value="">Choose category</option>
+            <option value="Politics">Politics</option>
+            <option value="Technology">Technology</option>
+            <option value="Science">Science</option>
+            <option value="Socials">Socials</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Others">Others</option>
+          </select>
         </label>
         <button type='submit'>Create Event</button>
       </form>
