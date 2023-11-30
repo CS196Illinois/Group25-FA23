@@ -1,0 +1,9 @@
+:root {
+    --doc-height: 100%;
+}
+
+div .mainContainer{
+    min-height: 100vh;
+    height: auto;
+    height: var(--doc-height);
+}
