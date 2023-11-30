@@ -13,8 +13,8 @@ const Home = (props) => {
                 {
                     <>
                         {/* <Image src={'logo192.png'} width={150} height={150} fluid roundedCircle /> */}
-                        <Text variant={props.variant} text={home_json.name} size={5} />
-                        <Text variant={props.variant} text={home_json.intro} size={6} />
+                        <Text variant={props.variant} text={home_json.title} size={5} />
+                        <Text variant={props.variant} text={home_json.description} size={6} />
                     </>
                 }
         </Container>
