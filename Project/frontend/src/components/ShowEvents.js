@@ -1,8 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import axios from "axios";
 import useDebounce from "./hooks/use-debounce";
 
-const url = 'http://127.0.0.1:8000/api'
+import AuthContext from '../context/AuthContext';
+
+
+const url = 'http://127.0.0.1:8000/search'
 
 const ShowEvents = () => {
 
@@ -12,27 +15,38 @@ const ShowEvents = () => {
     const [orderText, setOrderText] = useState("")
     const debounce = useDebounce(events, 250)
 
+    let {authTokens, logoutUser} = useContext(AuthContext)
+
     /**
     const getEvents = async () => {
         const response = await axios.get('http://localhost:8000/')
         setEvents(response.data)
     }
     */
+    const getEvents = async () => {
+        const response = await axios.get('http://localhost:8000/api/')
+        if (response.status === 200) {
+            setEvents(response.data)
+        } else if (response.statusText === "Unauthorized") {
+            logoutUser()
+        }
+        
+    }
 
     useEffect(() => {
         fetchData()
-      }, [debounce])
+    }, [debounce])
     
     const fetchData = async() => {
         const endpoint = `${url}/posts/?category=${nameText}&search=${searchText}&ordering=${orderText}`
     
         try {
-          const response = await axios.get(endpoint)
+            const response = await axios.get(endpoint)
           //const events = await response.json()
-          console.log(response.data)
-          setEvents(response.data)
+            console.log(response.data)
+            setEvents(response.data)
         } catch (e) {
-          console.log(e)
+            console.log(e)
         }
     }    
 

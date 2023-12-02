@@ -1,11 +1,15 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import "../css/navbar.css";
 import { Link } from "react-router-dom";
 import { ToggleMode } from "./util";
 import Text from './Text';
 
+import AuthContext from '../context/AuthContext';
+
+
 const NavArea = (props) => {
+    let {user, logoutUser} = useContext(AuthContext)
     return(
         <div className="navContainer">
             <Navbar bg={props.variant} expand="lg" variant={props.variant}>
@@ -19,6 +23,18 @@ const NavArea = (props) => {
                             <NavLink to="/home" {...props}>Home</NavLink>
                             <NavLink to="/events" {...props}>ShowEvents</NavLink>
                             <NavLink to="/create-event/" {...props}>CreateEvent</NavLink>
+                            {user ? (
+                                <p onClick={logoutUser}>Logout</p>
+                            ): (
+                                <NavLink to="/login" {...props}>Login</NavLink>
+                            )}
+                            {user ? (
+                                user && <p>Hello {user.username}</p>
+                            ): (
+                                <NavLink to="/register" {...props}>Register</NavLink>
+                            )}
+
+                            {/* {user && <p>Hello {user.username}</p>} */}
                         </Nav>
                         <ToggleMode {...props}/>
                     </Navbar.Collapse>

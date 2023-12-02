@@ -26,13 +26,13 @@ const Bootstrap = () => {
 };
 
 const App = () => {
-  const [isLight, setIsLight] = useState("light");
-  return(
-      <DisplayModeContext.Provider value={{isLight, setIsLight}}>
-          <Bootstrap />
-          <Content variant={isLight}/>
-      </DisplayModeContext.Provider>
-  )
+    const [isLight, setIsLight] = useState("light");
+        return(
+            <DisplayModeContext.Provider value={{isLight, setIsLight}}>
+                <Bootstrap />
+                <Content variant={isLight}/>
+        </DisplayModeContext.Provider>
+    )
 }
 
 export default App;
