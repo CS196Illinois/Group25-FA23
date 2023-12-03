@@ -1,6 +1,6 @@
 # Group 25
 
-Group Name: TEAM_NAME
+Group Name: Illini Events
 
 [MVP Link](http://cs196.cs.illinois.edu)
 
