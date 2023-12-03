@@ -1,8 +1,6 @@
 import React, { createContext, useState} from 'react';
 import Content from './components/Content.js';
 
-
-
 export const DisplayModeContext = createContext();
 
 const Bootstrap = () => {
