@@ -12,14 +12,9 @@ const Home = (props) => {
             <Helmet><title>IlliniEvents</title></Helmet>
                 {
                     <>
+                        {/* <Image src={'logo192.png'} width={150} height={150} fluid roundedCircle /> */}
                         <Text variant={props.variant} text={home_json.title} size={5} />
                         <Text variant={props.variant} text={home_json.description} size={6} />
-                        
-                        <div style={{height: "500px", width: "100%"}}>
-                            <iframe title = "calendar" src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FChicago&src=YTJjM2Q5OGQzNjZlNjUxY2QwZjBhYjNmMDE2MmU0ZmI2M2IzYmQ2ZTk2YWM2NGUyODEzMzJhNzI5ZmZjMWE3OUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23C0CA33" 
-                                style={{border: 0}} width="100%" height="100%" frameborder="0" scrolling="no">
-                            </iframe>
-                        </div>
                     </>
                 }
         </Container>

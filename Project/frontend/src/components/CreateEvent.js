@@ -54,12 +54,11 @@ const CreateEvent = () => {
   };
 
   return (
-    <div class = 'createEvent'>
-      <center>
+    <div>
       <h1>Create Event</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          Event Name: <br></br>
+          Event Name:
           <input
             type='text'
             value={event_name}
@@ -68,7 +67,7 @@ const CreateEvent = () => {
         </label>
         <br />
         <label>
-          Description: <br></br>
+          Description:
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
@@ -76,7 +75,7 @@ const CreateEvent = () => {
         </label>
         <br />
         <label>
-          Date: <br></br>
+          Date:
           <input
             type='date'
             value={date}
@@ -85,7 +84,7 @@ const CreateEvent = () => {
         </label>
         <br />
         <label>
-          Time: <br></br>
+          Time:
           <input
             type='time'
             value={time}
@@ -94,7 +93,7 @@ const CreateEvent = () => {
         </label>
         <br />
         <label>
-          Location: <br></br>
+          Location:
           <input
             type='text'
             value={location}
@@ -103,7 +102,7 @@ const CreateEvent = () => {
         </label>
         <br />
         <label>
-          Organizer: <br></br>
+          Organizer:
           <input
             type='text'
             value={organizer}
@@ -112,7 +111,7 @@ const CreateEvent = () => {
         </label>
         <br />
         <label>
-          Category: <br></br>
+          Category:
           <select 
             name="category" 
             id="category" 
@@ -130,7 +129,6 @@ const CreateEvent = () => {
         </label>
         <button type='submit'>Create Event</button>
       </form>
-      </center>
     </div>
   );
 };
