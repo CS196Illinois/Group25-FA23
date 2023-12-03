@@ -13,6 +13,7 @@ const ShowEvents = () => {
     const [searchText, setSearchText] = useState("")
     const [nameText, setNameText] = useState("")
     const [orderText, setOrderText] = useState("")
+    const [dateText, setDateText] = useState("")
     const debounce = useDebounce(events, 250)
 
     let {authTokens, logoutUser} = useContext(AuthContext)
@@ -38,7 +39,7 @@ const ShowEvents = () => {
     }, [debounce])
     
     const fetchData = async() => {
-        const endpoint = `${url}/posts/?category=${nameText}&search=${searchText}&ordering=${orderText}`
+        const endpoint = `${url}/posts/?category=${nameText}&search=${searchText}&ordering=${orderText}&${dateText}`
     
         try {
             const response = await axios.get(endpoint)
@@ -96,6 +97,15 @@ const ShowEvents = () => {
                     <option value="Socials">Socials</option>
                     <option value="Entertainment">Entertainment</option>
                     <option value="Others">Others</option>
+                </select>
+                <select 
+                    name="category" 
+                    id="category" 
+                    value={dateText} 
+                    onChange={e => setDateText(e.target.value)}
+                >
+                    <option value="">Show All Events</option>
+                    <option value="date">Show only present and future events</option>
                 </select>
             </div>
             <h1>
