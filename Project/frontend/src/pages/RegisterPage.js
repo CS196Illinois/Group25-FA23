@@ -84,7 +84,7 @@ const RegisterPage = () => {
 
     return (
         <>
-            <div className="outer">
+            <div className="outer loginPage">
             {success ? (
                 <section>
                     <h1>Success!</h1>
@@ -93,17 +93,17 @@ const RegisterPage = () => {
                     </p>
                 </section>
             ) : (
-                <section>
+                <section id = "section">
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1>Register</h1>
+                    <center><h1>Register</h1></center>
                     <form onSubmit={handleSubmit}>
-                        <label htmlFor="username">
+                        <label htmlFor="username" class = 'title'>
                             Username:
                             <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
                             <FontAwesomeIcon icon={faTimes} className={validName || !user ? "hide" : "invalid"} />
                         </label>
                         <input
-                            type="text"
+                            type="user"
                             id="username"
                             ref={userRef}
                             autoComplete="off"
@@ -123,13 +123,13 @@ const RegisterPage = () => {
                         </p>
 
 
-                        <label htmlFor="password">
+                        <label htmlFor="password" class = 'title'>
                             Password:
                             <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
                             <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} />
                         </label>
                         <input
-                            type="password"
+                            type="pass"
                             id="password"
                             onChange={(e) => setPwd(e.target.value)}
                             value={pwd}
@@ -147,13 +147,13 @@ const RegisterPage = () => {
                         </p>
 
 
-                        <label htmlFor="confirm_pwd">
+                        <label htmlFor="confirm_pwd" class = 'title'>
                             Confirm Password:
                             <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? "valid" : "hide"} />
                             <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hide" : "invalid"} />
                         </label>
                         <input
-                            type="password"
+                            type="pass"
                             id="confirm_pwd"
                             onChange={(e) => setMatchPwd(e.target.value)}
                             value={matchPwd}
