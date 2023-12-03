@@ -1,0 +1,12 @@
+.navContainer {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+a.brand {
+    text-decoration: none;
+}
+
+a.navlink{
+    text-decoration: none;
+}
