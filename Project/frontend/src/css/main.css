@@ -1,9 +1,12 @@
 :root {
     --doc-height: 100%;
+    color:orange;
 }
 
 div .mainContainer{
     min-height: 100vh;
     height: auto;
     height: var(--doc-height);
+    background-color: cornflowerblue;
+    box-sizing: content-box;
 }

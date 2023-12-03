@@ -29,7 +29,7 @@ const NavArea = (props) => {
                                 <NavLink to="/login" {...props}>Login</NavLink>
                             )}
                             {user ? (
-                                user && <p>Hello {user.username}</p>
+                                user && <p> Hello {user.username}</p>
                             ): (
                                 <NavLink to="/register" {...props}>Register</NavLink>
                             )}
