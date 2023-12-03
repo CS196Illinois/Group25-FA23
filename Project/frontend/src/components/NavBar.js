@@ -22,14 +22,22 @@ const NavArea = (props) => {
                         <Nav className="me-auto">
                             <NavLink to="/home" {...props}>Home</NavLink>
                             <NavLink to="/events" {...props}>ShowEvents</NavLink>
-                            <NavLink to="/create-event/" {...props}>CreateEvent</NavLink>
+
+                            {/* <NavLink to="/create-event/" {...props}>CreateEvent</NavLink> */}
+
+                            {user ? (
+                                <NavLink to="/create-event/" {...props}>CreateEvent</NavLink>
+                            ): (
+                                <p></p>
+                            )}
+
                             {user ? (
                                 <p onClick={logoutUser}>Logout</p>
                             ): (
                                 <NavLink to="/login" {...props}>Login</NavLink>
                             )}
                             {user ? (
-                                user && <p>Hello {user.username}</p>
+                                user && <p> Hello {user.username}</p>
                             ): (
                                 <NavLink to="/register" {...props}>Register</NavLink>
                             )}

@@ -26,9 +26,12 @@ const Main = (props) => {
                                 <Route path="*" element={<Home {...props}/>} />
                                 <Route path="/home" element={<Home {...props}/>} />
                                 <Route path="/events/" element={<ShowEvents {...props}/>} />
-                                <Route path="/create-event/" element={<CreateEvent {...props}/>} />
+                                {/* <Route path="/create-event/" element={<CreateEvent {...props}/>} /> */}
                                 <Route path="/login/" element={<LoginPage {...props}/>} />
                                 <Route path="/register/" element={<RegisterPage {...props}/>} />
+                                <Route element={<PrivateRoutes />}>
+                                    <Route path="/create-event/" element={<CreateEvent {...props} />} />
+                                </Route>
                             </Routes>
                     </HelmetProvider>
                 </Container>
