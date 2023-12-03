@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import "../css/navbar.css";
 import { Link } from "react-router-dom";
 import { ToggleMode } from "./util";
@@ -21,7 +21,7 @@ const NavArea = (props) => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <NavLink to="/home" {...props}>Home</NavLink>
-                            <NavLink to="/events" {...props}>ShowEvents</NavLink>
+                            <NavLink to="/events" {...props}>Events</NavLink>
 
                             {/* <NavLink to="/create-event/" {...props}>CreateEvent</NavLink> */}
 
@@ -32,12 +32,12 @@ const NavArea = (props) => {
                             )}
 
                             {user ? (
-                                <p onClick={logoutUser}>Logout</p>
+                                <NavButton {...props}>Logout</NavButton>
                             ): (
                                 <NavLink to="/login" {...props}>Login</NavLink>
                             )}
                             {user ? (
-                                user && <p> Hello {user.username}</p>
+                                user && <NavLink {...props}>Hello, {user.username}</NavLink>
                             ): (
                                 <NavLink to="/register" {...props}>Register</NavLink>
                             )}
@@ -68,6 +68,19 @@ const NavLink = (props) => {
     return (
         <Nav.Link>
             <Link to={props.to} className="navlink">
+                <Text size={5} {...props}>
+                    {props.children}
+                </Text>
+            </Link>
+        </Nav.Link>
+    )
+}
+
+const NavButton = (props) => {
+    let {logoutUser} = useContext(AuthContext)
+    return (
+        <Nav.Link>
+            <Link onClick={logoutUser} to={props.to} className="navlink">
                 <Text size={5} {...props}>
                     {props.children}
                 </Text>
