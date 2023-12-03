@@ -24,7 +24,7 @@ const NavArea = (props) => {
                             <NavLink to="/events" {...props}>ShowEvents</NavLink>
                             <NavLink to="/create-event/" {...props}>CreateEvent</NavLink>
                             {user ? (
-                                <p onClick={logoutUser}>Logout</p>
+                                <p className = 'logout' onClick={logoutUser}>Logout</p>
                             ): (
                                 <NavLink to="/login" {...props}>Login</NavLink>
                             )}
