@@ -96,7 +96,7 @@ const RegisterPage = () => {
                 <section id = "section">
                     <center>
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1 class = "registerText"> Create Your Account</h1>
+                    <h1 class = "registerText"><b>Create Your Account</b> </h1>
                 
                     <p class = "registerText" >Create an account to add events.</p>
                     </center>

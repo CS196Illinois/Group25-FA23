@@ -93,6 +93,7 @@ button[type="submit"]:hover {
 .registerText {
     font-family:sans-serif;
     color: #0d5994;
+    font-style: bold;
 }
 
 input[type = "reg"], input[type = create]{
