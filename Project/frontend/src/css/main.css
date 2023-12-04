@@ -20,9 +20,6 @@ div .mainContainer{
 
 #section {
     background-color: #218fe1;
-
-
-
 }
 
 .sectionFont {
@@ -53,7 +50,7 @@ div .mainContainer{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: -20px;
+    top: 80px;
 }
 
 
@@ -93,4 +90,24 @@ button[type="submit"]:hover {
     padding-bottom: 0vh;
 }
 
+.registerText {
+    font-family:sans-serif;
+    color: #0d5994;
+}
+
+input[type = "reg"], input[type = create]{
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    outline: none;
+    border-radius: 10px;
+}
+
+.reg-title {
+    display: block;
+    color: white;
+    margin-bottom: 10px;
+    font-family: Brush Script MT (cursive);
+}
 

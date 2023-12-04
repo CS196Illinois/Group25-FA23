@@ -12,7 +12,10 @@ const LoginPage = () => {
 <form onSubmit={loginUser}>
     
 <br></br>
-                  
+<br></br>
+<br></br>
+<br></br>
+
 <label className ="title" for="user">USERNAME</label> 
             <input type="user" name="username"/>
             <label className = 'title'for="pass">PASSWORD</label> 
