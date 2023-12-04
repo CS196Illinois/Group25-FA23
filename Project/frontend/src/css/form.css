@@ -1,4 +1,11 @@
-.formfield {
-    width: 50%;
-    align-self: start;
+.form-field {
+    width: 30% !important;
+}
+
+.form-select {
+    width: 30% !important;
+}
+
+.btn-custom {
+    width: 30% !important;
 }

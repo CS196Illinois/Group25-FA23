@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import ShowEvents from "./ShowEvents";
 import CreateEvent from "./CreateEvent";
+import Landing from "./Landing";
 
 import LoginPage from '../pages/LoginPage'
 import RegisterPage from '../pages/RegisterPage'
@@ -23,9 +24,9 @@ const Main = (props) => {
                     <NavArea variant={props.variant}/>
                     <HelmetProvider>
                         <Routes>
-                                <Route path="*" element={<Home {...props}/>} />
-                                <Route path="/home" element={<Home {...props}/>} />
+                                <Route path="/home" element={<Landing {...props}/>} />
                                 <Route path="/events/" element={<ShowEvents {...props}/>} />
+                                <Route path="/calendar" element={<Home {...props}/>} />
                                 {/* <Route path="/create-event/" element={<CreateEvent {...props}/>} /> */}
                                 <Route path="/login/" element={<LoginPage {...props}/>} />
                                 <Route path="/register/" element={<RegisterPage {...props}/>} />

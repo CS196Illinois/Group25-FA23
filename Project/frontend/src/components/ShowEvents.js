@@ -3,6 +3,7 @@ import axios from "axios";
 import useDebounce from "./hooks/use-debounce";
 import Text from "./Text.js";
 import { Form } from 'react-bootstrap';
+import "../css/form.css";
 
 import AuthContext from '../context/AuthContext';
 
@@ -56,6 +57,10 @@ const ShowEvents = (props) => {
 
     return (
         <div>
+            <Text size={2} {...props}>
+                Events 
+            </Text>
+            <br />
             <div>
                 <Form.Control 
                     type="search" 
@@ -63,13 +68,10 @@ const ShowEvents = (props) => {
                     value={searchText} 
                     onChange={e => setSearchText(e.target.value)}
                 />
-                <span>    </span>
-                <Form.Select  
-                    size="sm"
+                <FormSelect  
                     name="ordering" 
                     id="ordering" 
                     value={orderText} 
-                    {...props}
                     onChange={e => setOrderText(e.target.value)}
                 >
                     <option value="">Choose ordering</option>
@@ -85,14 +87,11 @@ const ShowEvents = (props) => {
                     <option value="-location">Location - Descending</option>
                     <option value="organizer">Organizer - Ascending</option>
                     <option value="-organizer">Organizer - Descending</option>
-                </Form.Select>
-                <span>    </span>
-                <Form.Select 
-                    size="sm"
+                </FormSelect>
+                <FormSelect
                     name="category" 
                     id="category" 
                     value={nameText} 
-                    {...props}
                     onChange={e => setNameText(e.target.value)}
                 >
                     <option value="">Choose category</option>
@@ -102,11 +101,8 @@ const ShowEvents = (props) => {
                     <option value="Socials">Socials</option>
                     <option value="Entertainment">Entertainment</option>
                     <option value="Others">Others</option>
-                </Form.Select>
+                </FormSelect>
             </div>
-            <Text size={2} {...props}>
-                Events 
-            </Text>
             {
                 events && events.map(event =>
                     <ul>
@@ -125,5 +121,15 @@ const ShowEvents = (props) => {
         </div>
     );
 };
+
+const FormSelect = (props) => {
+    return (
+        <Form>
+            <Form.Group className="mb-3" {...props}>
+                <Form.Select size="sm" {...props} class="form-select"/>
+            </Form.Group>
+        </Form>
+    )
+}
 
 export default ShowEvents;

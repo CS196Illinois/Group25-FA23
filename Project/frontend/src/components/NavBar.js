@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar, Image } from "react-bootstrap";
 import "../css/navbar.css";
 import { Link } from "react-router-dom";
 import { ToggleMode } from "./util";
@@ -15,13 +15,13 @@ const NavArea = (props) => {
             <Navbar bg={props.variant} expand="lg" variant={props.variant}>
                 <Container>
                     <BrandBar to={"/home"} {...props}>
-                        IlliniEvents
+                        <Image src="https://i.imgur.com/59XICLa.png" width={150} height={120} fluid rounded/>
                     </BrandBar>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <NavLink to="/home" {...props}>Home</NavLink>
                             <NavLink to="/events" {...props}>Events</NavLink>
+                            <NavLink to="/calendar" {...props}>Calendar</NavLink>
 
                             {/* <NavLink to="/create-event/" {...props}>CreateEvent</NavLink> */}
 

@@ -94,12 +94,10 @@ const CreateEvent = (props) => {
         </Text>
         <Text size={6} {...props}>
           Category:
-          <Form.Select 
-            size="sm"
+          <FormSelect
             name="category" 
             id="category" 
             value={category} 
-            {...props}
             onChange={e => setCategory(e.target.value)}
           >
             <option value="">Choose category</option>
@@ -109,10 +107,10 @@ const CreateEvent = (props) => {
             <option value="Socials">Socials</option>
             <option value="Entertainment">Entertainment</option>
             <option value="Others">Others</option>
-          </Form.Select>
+          </FormSelect>
         </Text>
         <br />
-        <Button type='submit' size="sm" {...props}>Create Event</Button>
+        <Button type='submit' size="sm" class="btn-custom" {...props}>Create Event</Button>
       </Form>
     </div>
   );
@@ -122,10 +120,21 @@ const FormField = (props) => {
   return (
       <Form>
         <Form.Group className="mb-3" {...props}>
-          <Form.Control size="sm" as="textarea" {...props} class="formfield"/>
+          <Form.Control size="sm" as="textarea" {...props} class="form-field"/>
         </Form.Group>
       </Form>
   )
 }
+
+const FormSelect = (props) => {
+  return (
+      <Form>
+        <Form.Group className="mb-3" {...props}>
+          <Form.Select size="sm" {...props} class="form-select"/>
+        </Form.Group>
+      </Form>
+  )
+}
+
 
 export default CreateEvent;
