@@ -12,7 +12,7 @@ const LoginPage = () => {
                     <Form.Label className ="title" for="user">USERNAME</Form.Label> 
                     <Form.Control type="user" name="username"/>
                     <Form.Label className = 'title'for="pass">PASSWORD</Form.Label> 
-                    <Form.Control type="pass" name="password"/>
+                    <Form.Control type="password" name="password"/>
                     <br />
                     <Button type="submit">SIGN IN</Button>
                 </Form>
