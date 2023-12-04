@@ -68,7 +68,7 @@ const ShowEvents = (props) => {
                     placeholder="search..." 
                     value={searchText} 
                     onChange={e => setSearchText(e.target.value)}
-                />
+                /> <br />
                 <FormSelect  
                     name="ordering" 
                     id="ordering" 
@@ -123,8 +123,9 @@ const ShowEvents = (props) => {
                             Time: {event.time} <br></br>
                             Location: {event.location} <br></br>
                             Organizer: {event.organizer} <br></br>
-                            Category: {event.category}
+                            Category: {event.category} <br></br>
                         </Text>
+                        <br></br>
                     </ul>
                 )
             }

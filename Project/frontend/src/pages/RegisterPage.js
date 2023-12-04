@@ -86,17 +86,17 @@ const RegisterPage = () => {
         <>
             <div className="outer loginPage">
             {success ? (
-                <section>
-                    <h1>Success!</h1>
+                <section id="section">
+                    <h1 align="center" class="boldText">Success!</h1>
                     <p>
-                        <a href="/login">Login</a>
+                        <a align="center" href="/login">Login</a>
                     </p>
                 </section>
             ) : (
                 <section id="section">
                     <center>
                         <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                        <h1 class="registerText"><b>Create Your Account</b></h1>
+                        <h1 class="boldText"><b>Create Your Account</b></h1>
                     </center>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="username" class='reg-title'>

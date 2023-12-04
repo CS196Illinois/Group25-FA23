@@ -58,7 +58,7 @@ const CreateEvent = (props) => {
 
 
   return (
-    <div>
+    <div id="events">
       <center>
         <Text size={2} {...props}>Create Event</Text>
         <br />
