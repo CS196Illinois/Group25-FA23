@@ -2,13 +2,14 @@ import React, {useState, useEffect, useContext} from 'react';
 import axios from "axios";
 import useDebounce from "./hooks/use-debounce";
 import Text from "./Text.js";
+import { Form } from 'react-bootstrap';
 
 import AuthContext from '../context/AuthContext';
 
 
 const url = 'http://127.0.0.1:8000/search'
 
-const ShowEvents = () => {
+const ShowEvents = (props) => {
 
     const [events, setEvents] = useState([])
     const [searchText, setSearchText] = useState("")
@@ -56,17 +57,19 @@ const ShowEvents = () => {
     return (
         <div>
             <div>
-                <input 
+                <Form.Control 
                     type="search" 
                     placeholder="search..." 
                     value={searchText} 
                     onChange={e => setSearchText(e.target.value)}
                 />
                 <span>    </span>
-                <select 
+                <Form.Select  
+                    size="sm"
                     name="ordering" 
                     id="ordering" 
                     value={orderText} 
+                    {...props}
                     onChange={e => setOrderText(e.target.value)}
                 >
                     <option value="">Choose ordering</option>
@@ -82,12 +85,14 @@ const ShowEvents = () => {
                     <option value="-location">Location - Descending</option>
                     <option value="organizer">Organizer - Ascending</option>
                     <option value="-organizer">Organizer - Descending</option>
-                </select>
+                </Form.Select>
                 <span>    </span>
-                <select 
+                <Form.Select 
+                    size="sm"
                     name="category" 
                     id="category" 
                     value={nameText} 
+                    {...props}
                     onChange={e => setNameText(e.target.value)}
                 >
                     <option value="">Choose category</option>
@@ -97,15 +102,15 @@ const ShowEvents = () => {
                     <option value="Socials">Socials</option>
                     <option value="Entertainment">Entertainment</option>
                     <option value="Others">Others</option>
-                </select>
+                </Form.Select>
             </div>
-            <h1>
-                Events: 
-            </h1>
+            <Text size={2} {...props}>
+                Events 
+            </Text>
             {
                 events && events.map(event =>
                     <ul>
-                        <li key={event.id}>
+                        <Text size={6} key={event.id} {...props}>
                             Event: {event.event_name} <br></br>
                             Description: {event.description} <br></br>
                             Date: {event.date} <br></br>
@@ -113,7 +118,7 @@ const ShowEvents = () => {
                             Location: {event.location} <br></br>
                             Organizer: {event.organizer} <br></br>
                             Category: {event.category}
-                        </li>
+                        </Text>
                     </ul>
                 )
             }
