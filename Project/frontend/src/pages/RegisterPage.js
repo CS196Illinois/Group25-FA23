@@ -84,7 +84,7 @@ const RegisterPage = () => {
 
     return (
         <>
-            <div className="outer loginPage">
+            <div className="outer">
             {success ? (
                 <section>
                     <h1>Success!</h1>
