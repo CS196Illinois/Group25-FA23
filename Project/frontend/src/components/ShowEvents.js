@@ -57,12 +57,12 @@ const ShowEvents = (props) => {
 
 
     return (
-        <div>
-            <Text size={2} {...props}>
-                Events 
-            </Text>
-            <br />
-            <div>
+        <div class = "events">
+            <center>
+            <h1 class = "eventsText"> <b>Events</b></h1>
+            </center>
+            <br/>
+            <div class = "filters">
                 <Form.Control 
                     type="search" 
                     placeholder="search..." 
@@ -116,7 +116,7 @@ const ShowEvents = (props) => {
             {
                 events && events.map(event =>
                     <ul>
-                        <Text size={6} key={event.id} {...props}>
+                        <Text class = "title" size={8} key={event.id} {...props}>
                             Event: {event.event_name} <br></br>
                             Description: {event.description} <br></br>
                             Date: {event.date} <br></br>

@@ -170,7 +170,7 @@ const RegisterPage = () => {
                         </p>
                         <button type= "submit" disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
                     </form>
-                    <p class = "registerText">
+                    <p class = "boldText">
                         Already registered?<br />
                         <span className="line">
                             {/*put router link here*/}
