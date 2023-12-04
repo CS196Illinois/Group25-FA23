@@ -93,15 +93,13 @@ const RegisterPage = () => {
                     </p>
                 </section>
             ) : (
-                <section id = "section">
+                <section id="section">
                     <center>
-                    <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1 class = "registerText"><b>Create Your Account</b> </h1>
-                
-                    <p class = "registerText" >Create an account to add events.</p>
+                        <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+                        <h1 class="registerText"><b>Create Your Account</b></h1>
                     </center>
                     <form onSubmit={handleSubmit}>
-                        <label htmlFor="username" class = 'reg-title'>
+                        <label htmlFor="username" class='reg-title'>
                             Username:
                             <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
                             <FontAwesomeIcon icon={faTimes} className={validName || !user ? "hide" : "invalid"} />
@@ -149,7 +147,6 @@ const RegisterPage = () => {
                             Must include uppercase and lowercase letters, a number and a special character.<br />
                             Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
                         </p>
-
 
                         <label htmlFor="confirm_pwd" class = 'reg-title'>
                             Confirm Password:
