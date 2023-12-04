@@ -59,59 +59,61 @@ const CreateEvent = (props) => {
 
   return (
     <div>
-      <Text size={2} {...props}>Create Event</Text>
-      <br />
-      <Form onSubmit={handleSubmit} {...props}>
-        <Text size={6} {...props}>
-          Event Title: 
-          <FormField placeholder="Event Title" value={event_name}
-            onChange={(e) => setEventName(e.target.value)}>
-          </FormField>
-        </Text>
-        <Text size={6} {...props}>
-          Description:
-          <FormField placeholder="Describe your event here" value={description} rows={3}
-            onChange={(e) => setDescription(e.target.value)}>
-          </FormField>
-        </Text>
-        <Text size={6} {...props}>
-          Date:
-          <Form.Control type="date" size="sm" value={date} onChange={(e) => setDate(e.target.value)}  {...props} />
-        </Text>
+      <center>
+        <Text size={2} {...props}>Create Event</Text>
         <br />
-        <Text size={6} {...props}>
-          Time:
-          <Form.Control type='time' size="sm" value={time} onChange={(e) => setTime(e.target.value)} {...props}/>
-        </Text> 
-        <br />
-        <Text size={6} {...props}>
-          Location:
-          <FormField value={location} onChange={(e) => setLocation(e.target.value)} />
-        </Text>
-        <Text size={6} {...props}>
-          Organizer:
-          <FormField value={organizer} onChange={(e) => setOrganizer(e.target.value)} />
-        </Text>
-        <Text size={6} {...props}>
-          Category:
-          <FormSelect
-            name="category" 
-            id="category" 
-            value={category} 
-            onChange={e => setCategory(e.target.value)}
-          >
-            <option value="">Choose category</option>
-            <option value="Politics">Politics</option>
-            <option value="Technology">Technology</option>
-            <option value="Science">Science</option>
-            <option value="Socials">Socials</option>
-            <option value="Entertainment">Entertainment</option>
-            <option value="Others">Others</option>
-          </FormSelect>
-        </Text>
-        <br />
-        <Button type='submit' size="sm" class="btn-custom" {...props}>Create Event</Button>
-      </Form>
+        <Form onSubmit={handleSubmit} {...props}>
+          <Text size={6} {...props}>
+            Event Title: 
+            <FormField placeholder="Event Title" value={event_name}
+              onChange={(e) => setEventName(e.target.value)}>
+            </FormField>
+          </Text>
+          <Text size={6} {...props}>
+            Description:
+            <FormField placeholder="Describe your event here" value={description} rows={3}
+              onChange={(e) => setDescription(e.target.value)}>
+            </FormField>
+          </Text>
+          <Text size={6} {...props}>
+            Date:
+            <Form.Control type="date" size="sm" value={date} onChange={(e) => setDate(e.target.value)}  {...props} />
+          </Text>
+          <br />
+          <Text size={6} {...props}>
+            Time:
+            <Form.Control type='time' size="sm" value={time} onChange={(e) => setTime(e.target.value)} {...props}/>
+          </Text> 
+          <br />
+          <Text size={6} {...props}>
+            Location:
+            <FormField value={location} onChange={(e) => setLocation(e.target.value)} />
+          </Text>
+          <Text size={6} {...props}>
+            Organizer:
+            <FormField value={organizer} onChange={(e) => setOrganizer(e.target.value)} />
+          </Text>
+          <Text size={6} {...props}>
+            Category:
+            <FormSelect
+              name="category" 
+              id="category" 
+              value={category} 
+              onChange={e => setCategory(e.target.value)}
+            >
+              <option value="">Choose category</option>
+              <option value="Politics">Politics</option>
+              <option value="Technology">Technology</option>
+              <option value="Science">Science</option>
+              <option value="Socials">Socials</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Others">Others</option>
+            </FormSelect>
+          </Text>
+          <br />
+          <Button type='submit' size="sm" class="btn-custom" {...props}>Create Event</Button>
+        </Form>
+      </center>
     </div>
   );
 };
