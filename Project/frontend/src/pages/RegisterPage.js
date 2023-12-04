@@ -96,9 +96,9 @@ const RegisterPage = () => {
                 <section id = "section">
                     <center>
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1 class = "registerText"><b>Create Your Account</b> </h1>
+                    <h1 class = "boldText"><b>Create Your Account</b> </h1>
                 
-                    <p class = "registerText" >Create an account to add events.</p>
+                    <p class = "boldText" >Create an account to add events.</p>
                     </center>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="username" class = 'reg-title'>
@@ -173,7 +173,7 @@ const RegisterPage = () => {
                         </p>
                         <button type= "submit" disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
                     </form>
-                    <p class = "registerText">
+                    <p class = "boldText">
                         Already registered?<br />
                         <span className="line">
                             {/*put router link here*/}

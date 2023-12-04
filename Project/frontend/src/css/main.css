@@ -10,6 +10,7 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+    
 }
 
 div .mainContainer{
@@ -43,6 +44,7 @@ div .mainContainer{
     padding: 100px;
     margin: 0;
     background-size: cover;
+    border-radius: 25px;
 }
 
 
@@ -71,6 +73,9 @@ input[type="user"], input[type="pass"], input[type = "reg"], input[type = create
     outline: none;
     border-radius: 10px;
 }
+input[type = "search"] {
+    width: 30%
+}
 
 button[type="submit"] {
     width: 100%;
@@ -90,21 +95,11 @@ button[type="submit"]:hover {
     padding-bottom: 0vh;
 }
 
-.registerText {
+.boldText {
     font-family:sans-serif;
     color: #0d5994;
     font-style: bold;
 }
-
-input[type = "reg"], input[type = create]{
-    width: 100%;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    outline: none;
-    border-radius: 10px;
-}
-
 .reg-title {
     display: block;
     color: white;
@@ -112,3 +107,36 @@ input[type = "reg"], input[type = create]{
     font-family: Brush Script MT (cursive);
 }
 
+.events {
+    background-color: #218fe1;
+    color: white;
+    border-radius: 25px;
+    
+}
+
+.eventsText {
+    font-family:sans-serif;
+    color: #0d5994;
+    padding-left: 10px;
+    padding-top: 10px;
+
+}
+
+.centerImg {
+    width: 750px;
+    height: 400px;
+    align-items: center;
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+
+.landingPage {
+    background-color: #218fe1;
+    border-radius: 10px;
+    color: #0d5994;
+    font-family: sans-serif
+}
+
+.filters {
+    padding-left: 30px;
+}

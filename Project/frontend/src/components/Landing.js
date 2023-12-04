@@ -7,13 +7,21 @@ const Landing = (props) => {
 
     return(
         <Container variant={props.variant}>
+        <div class ="landingPage">
         <Helmet><title>IlliniEvents</title></Helmet>
             <Helmet></Helmet>
                 {
                     <>
-                        <Text variant={props.variant} size={2}>Home</Text>
+                        <center>
+                            <h2 font-family><b>Hello! Welcome to IlliniEvents, your one stop shop to all events happening on the UIUC campus!</b></h2>
+                            <br></br>
+                            <img class = "centerImg" src = "https://www.admissions.illinois.edu/Content/images/visit-virtual-visits.jpg"></img>
+                        </center>
+                        
+                        <Text variant={props.variant} size={2}></Text>
                     </>
                 }
+            </div>
         </Container>
     )
 }
