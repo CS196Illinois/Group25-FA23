@@ -17,7 +17,8 @@ class Event(models.Model):
     date = models.DateField()
     time = models.TimeField()
     location = models.CharField(max_length=300)
-    organizer = models.CharField(max_length=300)
+    organizer = models.ForeignKey(User, on_delete=models.CASCADE)
+    organization = models.CharField(max_length=300, blank=True)
     category = models.CharField(max_length=300, choices=CATEGORY_CHOICES)
 
     class Meta:

@@ -6,8 +6,8 @@ class EventViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.all()
     serializer_class = EventSerializers
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
-    search_fields = ['event_name', 'description', 'date', 'time', 'location', 'organizer', 'category' ]
-    ordering_fields = ['event_name', 'description', 'date', 'time', 'location', 'organizer', 'category' ]
+    search_fields = ['event_name', 'description', 'date', 'time', 'location', 'organization', 'category' ]
+    ordering_fields = ['event_name', 'description', 'date', 'time', 'location', 'organization', 'category' ]
     
     def get_queryset(self):
         qs = Event.objects.all()

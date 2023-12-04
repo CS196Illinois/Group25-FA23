@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
+import AuthContext from '../context/AuthContext';
+import {jwtDecode} from 'jwt-decode'
 
 const CreateEvent = () => {
   // State to manage form input values
@@ -8,8 +10,19 @@ const CreateEvent = () => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [location, setLocation] = useState("");
-  const [organizer, setOrganizer] = useState("");
+  const [organization, setOrganization] = useState("");
   const [category, setCategory] = useState("");
+  const [organizer, setOrganizer] = useState("");
+  let {user} = useContext(AuthContext)
+  // let {authTokens} = useContext(AuthContext)
+  const [errMsg, setErrMsg] = useState('');
+
+  let [authTokens, setAuthTokens] = useState(()=> localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null)
+
+  
+
+
+
 
   //   axios
   //   .post("https://example.con/login", { email, password })
@@ -18,21 +31,33 @@ const CreateEvent = () => {
   //     // Handle response
   //   })
   // Function to handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios
-      .post("http://localhost:8000/", {
-        event_name,
-        description,
-        date,
-        time,
-        location,
-        organizer,
-        category,
-      })
-      .then((response) => {
-        console.log(response);
-      });
+
+      try {
+        const decodedToken = jwtDecode(authTokens.access);
+
+        const response = await axios({
+            method: "post",
+            url: 'http://127.0.0.1:8000',
+            data: {
+              event_name : event_name,
+              description :description,
+              date:date,
+              time:time,
+              location:location,
+              organization:organization,
+              category:category,
+              organizer: decodedToken.user_id,
+            }
+
+        })
+    } catch (err) {
+        if (!err?.response) {
+            setErrMsg('No Server Response');
+        } 
+    }
+
     // Perform the logic to send the form data to the server
     // (e.g., using axios to make a POST request)
     console.log("Form submitted:", {
@@ -42,6 +67,8 @@ const CreateEvent = () => {
       time,
       location,
       category,
+      organizer,
+
     });
     // Reset form fields after submission
     setEventName("");
@@ -49,7 +76,7 @@ const CreateEvent = () => {
     setDate("");
     setTime("");
     setLocation("");
-    setOrganizer("");
+    setOrganization("");
     setCategory("");
   };
 
@@ -102,11 +129,11 @@ const CreateEvent = () => {
         </label>
         <br />
         <label>
-          Organizer:
+          Organization:
           <input
             type='text'
-            value={organizer}
-            onChange={(e) => setOrganizer(e.target.value)}
+            value={organization}
+            onChange={(e) => setOrganization(e.target.value)}
           />
         </label>
         <br />

@@ -110,7 +110,7 @@ const ShowEvents = () => {
                             Date: {event.date} <br></br>
                             Time: {event.time} <br></br>
                             Location: {event.location} <br></br>
-                            Organizer: {event.organizer} <br></br>
+                            Organization: {event.organization} <br></br>
                             Category: {event.category}
                         </li>
                     </ul>
