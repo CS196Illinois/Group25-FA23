@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useContext} from 'react';
 import axios from "axios";
 import useDebounce from "./hooks/use-debounce";
+import Text from "./Text.js";
 
 import AuthContext from '../context/AuthContext';
 

@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import "../css/navbar.css";
 import { Link } from "react-router-dom";
 import { ToggleMode } from "./util";
@@ -9,7 +9,7 @@ import AuthContext from '../context/AuthContext';
 
 
 const NavArea = (props) => {
-    let {user, logoutUser} = useContext(AuthContext)
+    let {user} = useContext(AuthContext)
     return(
         <div className="navContainer">
             <Navbar bg={props.variant} expand="lg" variant={props.variant}>
@@ -26,7 +26,7 @@ const NavArea = (props) => {
                             {/* <NavLink to="/create-event/" {...props}>CreateEvent</NavLink> */}
 
                             {user ? (
-                                <NavLink to="/create-event/" {...props}>CreateEvent</NavLink>
+                                <NavLink to="/create-event/" {...props}>Create Event</NavLink>
                             ): (
                                 <p></p>
                             )}

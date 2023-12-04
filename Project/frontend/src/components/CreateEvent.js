@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Text from "./Text.js";
+import { Button, Form } from "react-bootstrap";
+import "../css/form.css";
 
-const CreateEvent = () => {
+const CreateEvent = (props) => {
   // State to manage form input values
   const [event_name, setEventName] = useState("");
   const [description, setDescription] = useState("");
@@ -53,69 +56,50 @@ const CreateEvent = () => {
     setCategory("");
   };
 
+
   return (
     <div>
-      <h1>Create Event</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Event Name:
-          <input
-            type='text'
-            value={event_name}
-            onChange={(e) => setEventName(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>
+      <Text size={2} {...props}>Create Event</Text>
+      <br />
+      <Form onSubmit={handleSubmit} {...props}>
+        <Text size={6} {...props}>
+          Event Title: 
+          <FormField placeholder="Event Title" value={event_name}
+            onChange={(e) => setEventName(e.target.value)}>
+          </FormField>
+        </Text>
+        <Text size={6} {...props}>
           Description:
-          <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>
+          <FormField placeholder="Describe your event here" value={description} rows={3}
+            onChange={(e) => setDescription(e.target.value)}>
+          </FormField>
+        </Text>
+        <Text size={6} {...props}>
           Date:
-          <input
-            type='date'
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-          />
-        </label>
+          <Form.Control type="date" size="sm" value={date} onChange={(e) => setDate(e.target.value)}  {...props} />
+        </Text>
         <br />
-        <label>
+        <Text size={6} {...props}>
           Time:
-          <input
-            type='time'
-            value={time}
-            onChange={(e) => setTime(e.target.value)}
-          />
-        </label>
+          <Form.Control type='time' size="sm" value={time} onChange={(e) => setTime(e.target.value)} {...props}/>
+        </Text> 
         <br />
-        <label>
+        <Text size={6} {...props}>
           Location:
-          <input
-            type='text'
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>
+          <FormField value={location} onChange={(e) => setLocation(e.target.value)} />
+        </Text>
+        <Text size={6} {...props}>
           Organizer:
-          <input
-            type='text'
-            value={organizer}
-            onChange={(e) => setOrganizer(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>
+          <FormField value={organizer} onChange={(e) => setOrganizer(e.target.value)} />
+        </Text>
+        <Text size={6} {...props}>
           Category:
-          <select 
+          <Form.Select 
+            size="sm"
             name="category" 
             id="category" 
             value={category} 
+            {...props}
             onChange={e => setCategory(e.target.value)}
           >
             <option value="">Choose category</option>
@@ -125,12 +109,23 @@ const CreateEvent = () => {
             <option value="Socials">Socials</option>
             <option value="Entertainment">Entertainment</option>
             <option value="Others">Others</option>
-          </select>
-        </label>
-        <button type='submit'>Create Event</button>
-      </form>
+          </Form.Select>
+        </Text>
+        <br />
+        <Button type='submit' size="sm" {...props}>Create Event</Button>
+      </Form>
     </div>
   );
 };
+
+const FormField = (props) => {
+  return (
+      <Form>
+        <Form.Group className="mb-3" {...props}>
+          <Form.Control size="sm" as="textarea" {...props} class="formfield"/>
+        </Form.Group>
+      </Form>
+  )
+}
 
 export default CreateEvent;
