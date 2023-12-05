@@ -8,4 +8,8 @@
 
 .btn-custom {
     width: 30% !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    outline: none !important;
+    box-shadow: none !important;
 }

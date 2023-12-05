@@ -58,7 +58,7 @@ const CreateEvent = (props) => {
 
 
   return (
-    <div id="events">
+    <div>
       <center>
         <Text size={2} {...props}>Create Event</Text>
         <br />
@@ -111,7 +111,7 @@ const CreateEvent = (props) => {
             </FormSelect>
           </Text>
           <br />
-          <Button type='submit' size="sm" class="btn-custom" {...props}>Create Event</Button>
+          <Button type='submit' size="md" {...props}>Create Event</Button>
         </Form>
       </center>
     </div>
